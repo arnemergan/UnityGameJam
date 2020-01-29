@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float SpawnFieldY;
     public float ZombieSpawnRateLeft;
     public float ZombieSpawnRateRight;
+    public float RavineWidth;
     private float LastSpawnLeft;
     private float LastSpawnRight;
     private float ZombieX, ZombieY, TempX, TempY;
@@ -27,14 +28,14 @@ public class GameManager : MonoBehaviour
     {
         if(LastSpawnRight + (1 / ZombieSpawnRateRight) < Time.time){
             
-            TempX = Random.Range(0f, SpawnFieldX)/2;
+            TempX = Random.Range(0f, SpawnFieldX-RavineWidth/2)/2;
             if(TempX > (VisibleAreaX)/2){
-                ZombieX = TempX;
+                ZombieX = TempX + RavineWidth/2;
                 ZombieY = Random.Range(0f, SpawnFieldY) - SpawnFieldY / 2;//REPLACE 75
                 
             }
             else{
-                ZombieX = TempX;
+                ZombieX = TempX + RavineWidth / 2;
                 TempY = Random.Range(0, SpawnFieldY-VisibleAreaY);
                 if(TempY > (SpawnFieldY-VisibleAreaY) / 2){
                     ZombieY = VisibleAreaY/2 + TempY - (SpawnFieldY - VisibleAreaY) / 2;
@@ -51,14 +52,14 @@ public class GameManager : MonoBehaviour
 
         if(LastSpawnLeft + (1 / ZombieSpawnRateLeft) < Time.time){
             
-            TempX = Random.Range(0f, SpawnFieldX)/2;
+            TempX = Random.Range(0f, SpawnFieldX-RavineWidth/2)/2;
             if(TempX > (VisibleAreaX)/2){
-                ZombieX = -TempX;
+                ZombieX = -TempX - RavineWidth / 2;
                 ZombieY = Random.Range(0f, SpawnFieldY) - SpawnFieldY / 2;//REPLACE 75
                 
             }
             else{
-                ZombieX = -TempX;
+                ZombieX = -TempX - RavineWidth /2;
                 TempY = Random.Range(0, SpawnFieldY-VisibleAreaY);
                 if(TempY > (SpawnFieldY-VisibleAreaY) / 2){
                     ZombieY = VisibleAreaY/2 + TempY - (SpawnFieldY - VisibleAreaY) / 2;
