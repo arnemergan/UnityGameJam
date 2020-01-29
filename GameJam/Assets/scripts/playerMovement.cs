@@ -36,7 +36,7 @@ public class playerMovement : MonoBehaviour
 
         //Only assign rotation if at least one of the directions is nonzero, causes an error otherwise
         if(directionX != 0 || directionY != 0){
-            Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY));
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY))*Quaternion.Euler(0,90,0);
             transform.rotation = rotation;
         }
         

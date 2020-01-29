@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1ccdeda67a3de42b2a7711acb6956b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 100
+  lookRadius: 250
   target: {fileID: 0}
   enemy: {fileID: 160598664858083021}
 --- !u!195 &1348140020883747205

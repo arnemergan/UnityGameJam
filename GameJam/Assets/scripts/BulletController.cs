@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class BulletController : MonoBehaviour
 {
@@ -16,7 +17,9 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Math.Abs(transform.position.x) > 260 || Math.Abs(transform.position.y) > 160){
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision other) {

@@ -7,13 +7,18 @@ public class enemyMovement : MonoBehaviour
 {
     public float lookRadius = 10;
 
-    public Transform target;
+    private Transform target;
+
+    private GameObject playertarget;
 
     public Enemy enemy;
+
     NavMeshAgent navMesh;
     // Start is called before the first frame update
     void Start()
     {
+        playertarget = GameObject.Find("Capsule");
+        target = playertarget.transform;
         enemy = GetComponent<Enemy>();
         navMesh = GetComponent<NavMeshAgent>();
     }
