@@ -12,7 +12,6 @@ public class playerMovement : MonoBehaviour
     private float tempY = 0f;
     public float movementSpeed;
     public float deadZone;
-
     private Actions actions;
     // Start is called before the first frame update
     void Start()
@@ -24,8 +23,9 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(rb.velocity.x <= 0.1 && rb.velocity.z <= 0.01){
-            actions.Sitting();
+        Debug.Log(rb.velocity.x + " " + rb.velocity.y + " " + rb.velocity.z);
+        if(rb.velocity.x <= 0.01 && rb.velocity.z <= 0.01){
+            actions.Stay();
         }else{
             actions.Run();
         }
@@ -44,8 +44,7 @@ public class playerMovement : MonoBehaviour
 
         //Only assign rotation if at least one of the directions is nonzero, causes an error otherwise
         if(directionX != 0 || directionY != 0){
-            //Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY))*Quaternion.Euler(0,90,0);
-            Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY));
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY))*Quaternion.Euler(0,180,0);
             transform.rotation = rotation;
         }
         

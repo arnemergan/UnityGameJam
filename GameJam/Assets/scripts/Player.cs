@@ -8,10 +8,11 @@ public class Player : MonoBehaviour
     public float damage;
     public float damagePerSecond;
     private float lastTimeDamaged;
+    private Actions actions;
     // Start is called before the first frame update
     void Start()
     {
-        
+        actions = GetComponent<Actions>();
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
                 Death();
             }else{
                 health = health - damage;
+                actions.Damage();
                 if(health <= 0){
                     Death();
                 }
@@ -36,7 +38,7 @@ public class Player : MonoBehaviour
     }
 
     void Death(){
-        Destroy(gameObject);
+        actions.Death();
         //animator.SetTrigger("Death");
     }
 }
