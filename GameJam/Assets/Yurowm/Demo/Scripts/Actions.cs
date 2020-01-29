@@ -16,7 +16,13 @@ public class Actions : MonoBehaviour {
 	public void Stay () {
 		animator.SetBool("Aiming", false);
 		animator.SetFloat ("Speed", 0f);
-		}
+	}
+
+	public void aimwhilerun(){
+		animator.SetBool ("Squat", false);
+		animator.SetBool("Aiming",true);
+		animator.SetFloat("Speed",0.8f);
+	}
 
 	public void Walk () {
 		animator.SetBool("Aiming", false);
