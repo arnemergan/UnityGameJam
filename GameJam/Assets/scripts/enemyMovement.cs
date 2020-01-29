@@ -17,7 +17,7 @@ public class enemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playertarget = GameObject.Find("Capsule");
+        playertarget = GameObject.Find("soldier");
         target = playertarget.transform;
         enemy = GetComponent<Enemy>();
         navMesh = GetComponent<NavMeshAgent>();
