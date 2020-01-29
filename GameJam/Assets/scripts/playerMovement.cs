@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class playerMovement : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float moveSpeed;
-    private Vector3 moveInput;
-    private Vector3 moveVelocity;
+    private Rigidbody rb;
+    private float directionX = 0f;
+    private float directionY = 0f;
+    private float tempX = 0f;
+    private float tempY = 0f;
+    public float movementSpeed;
+    public float deadZone;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +19,34 @@ public class playerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
     void FixedUpdate()
     {
-        moveInput = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
-        moveVelocity = moveInput * moveSpeed;
-        if(Input.GetAxis("Mouse X") != 0 && Input.GetAxis("Mouse Y") != 0){
-            Vector3 lookDirection = new Vector3(Input.GetAxis("Mouse X") / 25, 0, Input.GetAxis("Mouse Y") / 25);
-            transform.rotation = Quaternion.LookRotation(lookDirection);
-        }
-        rb.velocity = moveVelocity;
+        movement();
+        
+        
+        
     }
+    void movement(){
+
+        //Rotation
+        tempX = Input.GetAxis("Mouse X");
+        tempY = Input.GetAxis("Mouse Y");
+
+        //Only assign joystick axes if they're outside of deadzone
+        if(!(Math.Abs(tempY) < deadZone && Math.Abs(tempX) < deadZone)){
+            directionX = tempX;
+            directionY = tempY;
+        }
+
+        //Only assign rotation if at least one of the directions is nonzero, causes an error otherwise
+        if(directionX != 0 || directionY != 0){
+            Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY));
+            transform.rotation = rotation;
+        }
+        
+        //Movement
+        rb.velocity = new Vector3(Input.GetAxis("Horizontal")*movementSpeed, rb.velocity.y, Input.GetAxis("Vertical")*movementSpeed);
+    }
+
+  
 }
