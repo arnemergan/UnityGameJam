@@ -6,6 +6,8 @@ public class Player : MonoBehaviour
 {
     public float health;
     public float damage;
+    public float damagePerSecond;
+    private float lastTimeDamaged;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +21,17 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage(float damage){
-        if(health <= 0){
-            Death();
-        }else{
-            health = health - damage;
+        if(lastTimeDamaged + 1 / damagePerSecond < Time.time){
+            Debug.Log(damage);
             if(health <= 0){
                 Death();
+            }else{
+                health = health - damage;
+                if(health <= 0){
+                    Death();
+                }
             }
+            lastTimeDamaged = Time.time;                     
         }
     }
 

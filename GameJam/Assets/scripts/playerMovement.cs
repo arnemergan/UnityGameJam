@@ -22,12 +22,8 @@ public class playerMovement : MonoBehaviour
     void FixedUpdate()
     {
         movement();
-        
-        
-        
     }
     void movement(){
-
         //Rotation
         tempX = Input.GetAxis("Mouse X");
         tempY = Input.GetAxis("Mouse Y");

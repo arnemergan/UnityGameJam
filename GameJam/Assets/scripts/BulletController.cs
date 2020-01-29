@@ -23,6 +23,7 @@ public class BulletController : MonoBehaviour
         if(other.gameObject.tag == "EnemyTarget"){
             target = other.gameObject.GetComponent<Enemy>();
             target.TakeDamage(damage);
+            Destroy(gameObject);
         }
     }
 }

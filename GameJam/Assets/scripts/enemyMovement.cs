@@ -28,8 +28,7 @@ public class enemyMovement : MonoBehaviour
                 if(distance <= navMesh.stoppingDistance){
                     //do damage to player
                     Player player = target.GetComponent<Player>();
-                    player.TakeDamage(enemy.damage);
-                    Debug.Log("damage");
+                    player.TakeDamage(enemy.damage); 
                 }
             }
         }
