@@ -23,7 +23,6 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Debug.Log(rb.velocity.x + " " + rb.velocity.y + " " + rb.velocity.z);
         if(rb.velocity.x <= 0.01 && rb.velocity.z <= 0.01){
             actions.Stay();
         }else{
