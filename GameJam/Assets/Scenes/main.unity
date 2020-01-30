@@ -2509,6 +2509,11 @@ MonoBehaviour:
     type: 3}
   zombieLeft: {fileID: 8835078900147092500, guid: 77aa2e2cac22ec54a8f29d2f58e846b8,
     type: 3}
+  ZombieBox: {fileID: 4798527539309072287, guid: b4a3879599d88473888dae0d740dd9cf,
+    type: 3}
+  GunBox: {fileID: 826956839320490399, guid: 39a8159b0b993460a881e3980e8d696f, type: 3}
+  HealthPack: {fileID: 5604921804784222390, guid: 10845480bf3914fffb3828bdea163b1a,
+    type: 3}
   VisibleAreaX: 240
   VisibleAreaY: 150
   SpawnFieldX: 400
@@ -2520,6 +2525,7 @@ MonoBehaviour:
   RightScore: 0
   RightHealth: 0
   LeftHealth: 0
+  ZombieSpawnIncrease: 10
 --- !u!4 &1574127330
 Transform:
   m_ObjectHideFlags: 0
@@ -2546,7 +2552,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f2cadcc572fb24b179482786d7e30b45, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.65
+  m_Volume: 0.14
   m_Pitch: 1
   Loop: 1
   Mute: 0
