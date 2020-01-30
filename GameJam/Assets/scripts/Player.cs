@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public float health;
@@ -51,8 +51,10 @@ public class Player : MonoBehaviour
     void Death(Transform player){
         if(player.name == "soldier1"){
              game.RightHealth = health;
+             SceneManager.LoadScene(2);
          }else if(player.name == "soldier2"){
             game.LeftHealth = health;
+            SceneManager.LoadScene(3);
          }
         actions.Death();
         //animator.SetTrigger("Death");

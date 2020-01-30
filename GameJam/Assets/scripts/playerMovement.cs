@@ -25,9 +25,11 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(rb.velocity.x <= 0.01 && rb.velocity.z <= 0.01){
+        if(rb.velocity.x <= 0.01 && rb.velocity.z <= 0.01 && rb.velocity.y <= 0.01){
             actions.Stay();
-        }else{
+        }else if(rb.velocity.z > 0.01 && rb.velocity.z <= 0.5 || rb.velocity.x > 0.01 && rb.velocity.x <= 0.5 || rb.velocity.y > 0.01 && rb.velocity.y <= 0.5){
+            actions.Walk();
+        }else if(rb.velocity.z > 0.5 || rb.velocity.y > 0.5 || rb.velocity.x > 0.5 ){
             actions.Run();
         }
         movement();
@@ -48,7 +50,6 @@ public class playerMovement : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY))*Quaternion.Euler(0,180,0);
             transform.rotation = rotation;
         }
-         //Movement
         rb.velocity = new Vector3(Input.GetAxis("J" + playerNumber + "Horizontal")*movementSpeed, rb.velocity.y, Input.GetAxis("J" + playerNumber + "Vertical")*movementSpeed);
     }
 
