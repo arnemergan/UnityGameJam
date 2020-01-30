@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8788531264046732032}
   - component: {fileID: 3460063226808166412}
   m_Layer: 0
-  m_Name: PrefabEnemy
+  m_Name: PrefabEnemyA
   m_TagString: EnemyTarget
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,10 +46,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.15589727
-  m_Height: 4.1176467
+  m_Radius: 0.33823627
+  m_Height: 3.0822937
   m_Direction: 1
-  m_Center: {x: 0, y: 0.97730577, z: -0.84410304}
+  m_Center: {x: 0, y: 1.5140771, z: -0.044601783}
 --- !u!54 &242580319423499341
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a8f9c5f7c925584d80629787dfb1517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 200
   damage: 100
 --- !u!1001 &677548347708239350
 PrefabInstance:
