@@ -6,9 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject zombieRight;
     public GameObject zombieLeft;
-    public GameObject ZombieBox;
-    public GameObject GunBox;
-    public GameObject HealthPack;
+    public GameObject ZombieBoxLeft;
+    public GameObject GunBoxLeft;
+    public GameObject HealthPackLeft;
+    public GameObject ZombieBoxRight;
+    public GameObject GunBoxRight;
+    public GameObject HealthPackRight;
     public float VisibleAreaX;
     public float VisibleAreaY;
     public float SpawnFieldX;
@@ -24,7 +27,7 @@ public class GameManager : MonoBehaviour
     public float LeftHealth;
     public float ZombieSpawnIncrease;
     private float LastUpgradeScoreLeft = 0;
-    private float LastUpgradeScoreRight = 1;
+    private float LastUpgradeScoreRight = 0;
     private float LastIncrease = 0;
 
     private float ZombieX, ZombieY, TempX, TempY;
@@ -115,15 +118,15 @@ public class GameManager : MonoBehaviour
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(HealthPack, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(HealthPackLeft, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-           // Instantiate(GunBox, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(GunBoxLeft, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(ZombieBox, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(ZombieBoxLeft, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
         }
 
         if (RightScore % 250 == 0 && RightScore != LastUpgradeScoreRight)
@@ -132,15 +135,15 @@ public class GameManager : MonoBehaviour
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(HealthPack, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(HealthPackRight, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-           // Instantiate(GunBox, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(GunBoxRight, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(ZombieBox, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
+            Instantiate(ZombieBoxRight, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
         }
     }
 
@@ -154,17 +157,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void IncreaseSpawnRateLeft()
+    public void IncreaseSpawnRateLeft()
     {
-        ZombieSpawnRateLeft += 1;
+        ZombieSpawnRateLeft += 0.5f;
     }
 
-    private void IncreaseSpawnRateRight()
+    public void IncreaseSpawnRateRight()
     {
-        ZombieSpawnRateLeft += 2;
+        ZombieSpawnRateLeft += 0.5f;
     }
 
-    private void IncreaseHealthLeft()
+    public void IncreaseHealthLeft()
     {
         LeftHealth += 250;
         if(LeftHealth > 1000)
@@ -173,7 +176,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void IncreaseHealthRight()
+    public void IncreaseHealthRight()
     {
         RightHealth += 250;
         if (RightHealth > 1000)
