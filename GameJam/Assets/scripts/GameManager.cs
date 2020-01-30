@@ -119,14 +119,14 @@ public class GameManager : MonoBehaviour
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(GunBox, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
+           // Instantiate(GunBox, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
             Instantiate(ZombieBox, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
         }
 
-        if (RightScore % 250 == 0 && LeftScore != LastUpgradeScoreRight)
+        if (RightScore % 250 == 0 && RightScore != LastUpgradeScoreRight)
         {
             LastUpgradeScoreRight = RightScore;
 
@@ -136,7 +136,7 @@ public class GameManager : MonoBehaviour
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
-            Instantiate(GunBox, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
+           // Instantiate(GunBox, new Vector3(TempX, (float)1.5, TempY), new Quaternion());
 
             TempX = Random.Range(0, VisibleAreaX / 2 - RavineWidth / 2) + RavineWidth / 2;
             TempY = Random.Range(10, VisibleAreaY - 10) - VisibleAreaY / 2;
