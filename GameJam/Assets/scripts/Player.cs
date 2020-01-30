@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private float lastTimeDamaged;
     private GameManager game;
     private Actions actions;
+    private AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
         actions = GetComponent<Actions>();
         game.LeftHealth = health;
         game.RightHealth = health;
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
             if(health <= 0){
                 Death(player);
             }else{
+                source.Play();
                 health = health - damage;
                 if(player.name == "soldier1"){
                     game.RightHealth = health;

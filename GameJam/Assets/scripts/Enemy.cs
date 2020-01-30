@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    private AudioSource source;
     public float health;
     public float damage;
     private Animator animator;
@@ -15,12 +16,13 @@ public class Enemy : MonoBehaviour
     {
         game = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void TakeDamage(float damage,Transform player){
@@ -42,5 +44,11 @@ public class Enemy : MonoBehaviour
             game.LeftScore = game.LeftScore + 10;
         }
         Destroy(gameObject);
+    }
+
+    void Moan(){
+        if(Random.Range(0, 200) == 1){
+            source.Play();
+        }
     }
 }

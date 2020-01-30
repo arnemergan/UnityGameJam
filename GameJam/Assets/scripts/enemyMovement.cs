@@ -11,9 +11,7 @@ public class enemyMovement : MonoBehaviour
     private Transform target2;
     private GameObject playertarget1;
     private GameObject playertarget2;
-
     public Enemy enemy;
-
     private Transform[] transforms = new Transform[2];
 
     NavMeshAgent navMesh;
@@ -31,7 +29,7 @@ public class enemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Transform target = GetClosestTarget(transforms);
         if(enemy.health > 0){
