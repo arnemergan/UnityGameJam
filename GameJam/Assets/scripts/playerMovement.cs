@@ -13,6 +13,8 @@ public class playerMovement : MonoBehaviour
     public float movementSpeed;
     public float deadZone;
     private Actions actions;
+
+    public int playerNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +34,8 @@ public class playerMovement : MonoBehaviour
     }
     void movement(){
         //Rotation
-        tempX = Input.GetAxis("Mouse X");
-        tempY = Input.GetAxis("Mouse Y");
+        tempX = Input.GetAxis("J" + playerNumber + "MouseX");
+        tempY = Input.GetAxis("J" + playerNumber + "MouseY");
 
         //Only assign joystick axes if they're outside of deadzone
         if(!(Math.Abs(tempY) < deadZone && Math.Abs(tempX) < deadZone)){
@@ -46,9 +48,8 @@ public class playerMovement : MonoBehaviour
             Quaternion rotation = Quaternion.LookRotation(new Vector3(directionX, 0, directionY))*Quaternion.Euler(0,180,0);
             transform.rotation = rotation;
         }
-        
-        //Movement
-        rb.velocity = new Vector3(Input.GetAxis("Horizontal")*movementSpeed, rb.velocity.y, Input.GetAxis("Vertical")*movementSpeed);
+         //Movement
+        rb.velocity = new Vector3(Input.GetAxis("J" + playerNumber + "Horizontal")*movementSpeed, rb.velocity.y, Input.GetAxis("J" + playerNumber + "Vertical")*movementSpeed);
     }
 
   

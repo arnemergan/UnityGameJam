@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject zombie;
+    public GameObject zombieRight;
+    public GameObject zombieLeft;
     public float VisibleAreaX;
     public float VisibleAreaY;
     public float SpawnFieldX;
@@ -14,6 +15,11 @@ public class GameManager : MonoBehaviour
     public float RavineWidth;
     private float LastSpawnLeft;
     private float LastSpawnRight;
+    public float LeftScore;
+    public float RightScore;
+    public float RightHealth;
+    public float LeftHealth;
+
     private float ZombieX, ZombieY, TempX, TempY;
 
     //X = 0 is dividing line
@@ -45,7 +51,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            Instantiate(zombie, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
+            Instantiate(zombieRight, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
             
             LastSpawnRight = Time.time;
         }
@@ -69,7 +75,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            Instantiate(zombie, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
+            Instantiate(zombieLeft, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
             
             LastSpawnLeft = Time.time;
         }

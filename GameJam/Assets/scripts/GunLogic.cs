@@ -7,10 +7,10 @@ public class GunLogic : MonoBehaviour
     public float BulletSpeed;
     public float FireRate;
     private float TimeSinceLastShot = 0f;
+    public int playerNumber;
 
     void Start()
     {
-        
     }
 
     void FixedUpdate()
@@ -20,7 +20,7 @@ public class GunLogic : MonoBehaviour
 
     void shoot()
     {
-        if (Input.GetAxis("Fire1") == 1 && TimeSinceLastShot + 1 / FireRate < Time.time)
+        if (Input.GetAxis("J" + playerNumber + "Fire1") == 1 && TimeSinceLastShot + 1 / FireRate < Time.time)
         {   
             Rigidbody bulletInstance = Instantiate(Bullet, FirePoint.position, FirePoint.rotation*Quaternion.Euler(-90, 0, -90)) as Rigidbody;
             bulletInstance.velocity = FirePoint.forward * -BulletSpeed;

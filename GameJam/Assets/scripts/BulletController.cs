@@ -6,7 +6,7 @@ using System;
 public class BulletController : MonoBehaviour
 {
     private Enemy target;
-
+    public Transform Bullet;
     public float damage;
     // Start is called before the first frame update
     void Start()
@@ -22,9 +22,20 @@ public class BulletController : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other) {
-        if(other.gameObject.tag == "EnemyTarget"){
-            target = other.gameObject.GetComponent<Enemy>();
-            target.TakeDamage(damage);
+        if(Bullet.tag == "bulletB"){
+            if(other.gameObject.tag == "EnemyTargetB"){
+                target = other.gameObject.GetComponent<Enemy>();
+                target.TakeDamage(damage,Bullet);
+            }else{
+                Destroy(gameObject);
+            }
+        }else if(Bullet.tag == "bulletA"){
+            if(other.gameObject.tag == "EnemyTarget"){
+                target = other.gameObject.GetComponent<Enemy>();
+                target.TakeDamage(damage,Bullet);
+            }else{
+                Destroy(gameObject);
+            }
         }
     }
 }

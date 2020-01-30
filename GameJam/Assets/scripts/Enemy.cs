@@ -7,10 +7,13 @@ public class Enemy : MonoBehaviour
     public float health;
     public float damage;
     private Animator animator;
+    private GameManager game;
+    private Transform lastDamaged;
 
     // Start is called before the first frame update
     void Start()
     {
+        game = FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
     }
 
@@ -20,7 +23,8 @@ public class Enemy : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage){
+    public void TakeDamage(float damage,Transform player){
+        lastDamaged = player;
         if(health <= 0){
             Death();
         }else{
@@ -32,6 +36,11 @@ public class Enemy : MonoBehaviour
     }
 
     void Death(){
+        if(lastDamaged.tag == "bulletA"){
+            game.RightScore = game.RightScore + 10;
+        }else if(lastDamaged.tag == "bulletB"){
+            game.LeftScore = game.LeftScore + 10;
+        }
         Destroy(gameObject);
     }
 }
