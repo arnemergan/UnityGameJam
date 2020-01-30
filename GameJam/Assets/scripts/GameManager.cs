@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public float LeftHealth;
     public float ZombieSpawnIncrease;
     private float LastUpgradeScoreLeft = 0;
-    private float LastUpgradeScoreRight = 0;
+    private float LastUpgradeScoreRight = 1;
     private float LastIncrease = 0;
 
     private float ZombieX, ZombieY, TempX, TempY;

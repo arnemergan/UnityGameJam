@@ -29,4 +29,9 @@ public class GunLogic : MonoBehaviour
             TimeSinceLastShot = Time.time;
         }
     }
+
+    public void increaseFireRate()
+    {
+        FireRate += 2;
+    }
 }
