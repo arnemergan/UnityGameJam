@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     private GameManager game;
     private Transform lastDamaged;
+    public GameObject blood;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,7 @@ public class Enemy : MonoBehaviour
             game.LeftScore = game.LeftScore + 10;
         }
         Destroy(gameObject);
+        Instantiate(blood,transform.position,Quaternion.identity);
     }
 
     void Moan(){
