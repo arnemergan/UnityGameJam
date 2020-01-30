@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        Moan();
     }
 
     public void TakeDamage(float damage,Transform player){
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Moan(){
-        if(Random.Range(0, 200) == 1){
+        if(Random.Range(0, 500) == 1){
             source.Play();
         }
     }

@@ -8,6 +8,8 @@ TagManager:
   - EnemyTargetB
   - bulletA
   - bulletB
+  - Left
+  - Right
   layers:
   - Default
   - TransparentFX

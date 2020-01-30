@@ -32,6 +32,6 @@ public class GunLogic : MonoBehaviour
 
     public void increaseFireRate()
     {
-        FireRate += 2;
+        FireRate += 0.5f;
     }
 }
