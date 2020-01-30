@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public GameObject ZombieBoxRight;
     public GameObject GunBoxRight;
     public GameObject HealthPackRight;
+    public Player player1;
+    public Player player2;
     public float VisibleAreaX;
     public float VisibleAreaY;
     public float SpawnFieldX;
@@ -173,16 +175,20 @@ public class GameManager : MonoBehaviour
     {
         if(LeftHealth < 1000)
             UIComponent.SetLeftStatus("Increased health");
-        LeftHealth += 250;
+            LeftHealth += 250;
+            player2.health += 250;
         if(LeftHealth > 1000)
             LeftHealth = 1000;
+            player2.health = 1000;
     }
 
     public void IncreaseHealthRight()
     {
         if (RightHealth < 1000)
             UIComponent.SetRightStatus("Increased health");
+            player1.health += 250;
         if (RightHealth > 1000)
+            player1.health = 100;
             RightHealth = 1000;
     }
 }

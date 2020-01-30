@@ -2846,7 +2846,6 @@ GameObject:
   - component: {fileID: 1571997522}
   - component: {fileID: 1571997521}
   - component: {fileID: 1571997520}
-  - component: {fileID: 1571997524}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2941,24 +2940,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1571997524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571997519}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad29e76b1005ff48ac43122592f9b1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LeftHealth: {fileID: 331001448}
-  RightHealth: {fileID: 1097431235}
-  LeftScoreText: {fileID: 909847128}
-  RightScoreText: {fileID: 1788628755}
-  LeftStatusMessage: {fileID: 217965972}
-  RightStatusMessage: {fileID: 172293786}
 --- !u!1001 &1573496768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3080,6 +3061,8 @@ MonoBehaviour:
     type: 3}
   HealthPackRight: {fileID: 5604921804784222390, guid: 9b360134fb8143c4180a289c1ac5e8ec,
     type: 3}
+  player1: {fileID: 2103687371}
+  player2: {fileID: 630076738}
   VisibleAreaX: 240
   VisibleAreaY: 150
   SpawnFieldX: 400
@@ -3218,8 +3201,8 @@ MonoBehaviour:
   RightHealth: {fileID: 1097431235}
   LeftScoreText: {fileID: 909847128}
   RightScoreText: {fileID: 1788628755}
-  LeftStatusMessage: {fileID: 0}
-  RightStatusMessage: {fileID: 0}
+  LeftStatusMessage: {fileID: 217965972}
+  RightStatusMessage: {fileID: 172293786}
 --- !u!1 &1592289211
 GameObject:
   m_ObjectHideFlags: 0
