@@ -324,7 +324,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: J1Vertical
     descriptiveName: 
@@ -356,7 +356,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 1
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: J1MouseX
     descriptiveName: 
@@ -388,7 +388,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 3
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: J1MouseY
     descriptiveName: 
@@ -420,7 +420,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: J1Fire1
     descriptiveName: 
@@ -452,7 +452,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 9
-    joyNum: 3
+    joyNum: 2
   - serializedVersion: 3
     m_Name: J2Vertical
     descriptiveName: 

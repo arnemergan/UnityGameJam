@@ -465,7 +465,6 @@ GameObject:
   - component: {fileID: 331001448}
   - component: {fileID: 331001450}
   - component: {fileID: 331001449}
-  - component: {fileID: 331001451}
   m_Layer: 5
   m_Name: Left Healthbar
   m_TagString: Untagged
@@ -528,18 +527,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331001447}
   m_CullTransparentMesh: 0
---- !u!114 &331001451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331001447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 546482ce471dcc342bd40e8086489eb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &460003791
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,7 +1686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 889859508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.73, y: 2.62479, z: -8.09}
+  m_LocalPosition: {x: -9.8, y: 2.62479, z: -8.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 630076737}
@@ -1783,7 +1770,6 @@ GameObject:
   - component: {fileID: 909847127}
   - component: {fileID: 909847129}
   - component: {fileID: 909847128}
-  - component: {fileID: 909847130}
   m_Layer: 5
   m_Name: Left Score
   m_TagString: Untagged
@@ -1850,18 +1836,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 909847126}
   m_CullTransparentMesh: 0
---- !u!114 &909847130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909847126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f27049340db9374a9745a02613c399f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &913465484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2132,6 @@ GameObject:
   - component: {fileID: 1097431235}
   - component: {fileID: 1097431237}
   - component: {fileID: 1097431236}
-  - component: {fileID: 1097431238}
   m_Layer: 5
   m_Name: Right Healthbar
   m_TagString: Untagged
@@ -2221,18 +2194,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097431234}
   m_CullTransparentMesh: 0
---- !u!114 &1097431238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1097431234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee3b3a93da7513a4aafc2970d8a03175, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1153580386
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3061,8 @@ MonoBehaviour:
     type: 3}
   HealthPackRight: {fileID: 5604921804784222390, guid: 9b360134fb8143c4180a289c1ac5e8ec,
     type: 3}
+  player1: {fileID: 2103687371}
+  player2: {fileID: 630076738}
   VisibleAreaX: 240
   VisibleAreaY: 150
   SpawnFieldX: 400
@@ -3238,6 +3201,8 @@ MonoBehaviour:
   RightHealth: {fileID: 1097431235}
   LeftScoreText: {fileID: 909847128}
   RightScoreText: {fileID: 1788628755}
+  LeftStatusMessage: {fileID: 217965972}
+  RightStatusMessage: {fileID: 172293786}
 --- !u!1 &1592289211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3507,7 +3472,6 @@ GameObject:
   - component: {fileID: 1788628754}
   - component: {fileID: 1788628756}
   - component: {fileID: 1788628755}
-  - component: {fileID: 1788628757}
   m_Layer: 5
   m_Name: Right Score
   m_TagString: Untagged
@@ -3576,18 +3540,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788628753}
   m_CullTransparentMesh: 0
---- !u!114 &1788628757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788628753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b19c28593ed7e4fa99c613a5ef07c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1818312823
 GameObject:
   m_ObjectHideFlags: 0
