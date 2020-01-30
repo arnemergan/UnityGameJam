@@ -25,11 +25,11 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(rb.velocity.x <= 0.01 && rb.velocity.z <= 0.01 && rb.velocity.y <= 0.01){
+        if(Math.Abs(rb.velocity.x) <= 0.01 && Math.Abs(rb.velocity.z) <= 0.01 && Math.Abs(rb.velocity.y) <= 0.01){
             actions.Stay();
-        }else if(rb.velocity.z > 0.01 && rb.velocity.z <= 0.5 || rb.velocity.x > 0.01 && rb.velocity.x <= 0.5 || rb.velocity.y > 0.01 && rb.velocity.y <= 0.5){
+        }else if(Math.Abs(rb.velocity.z) > 0.01 && Math.Abs(rb.velocity.z) <= 0.5 || Math.Abs(rb.velocity.x) > 0.01 && Math.Abs(rb.velocity.x) <= 0.5 || Math.Abs(rb.velocity.y) > 0.01 && Math.Abs(rb.velocity.y) <= 0.5){
             actions.Walk();
-        }else if(rb.velocity.z > 0.5 || rb.velocity.y > 0.5 || rb.velocity.x > 0.5 ){
+        }else if(Math.Abs(rb.velocity.z) > 0.5 || Math.Abs(rb.velocity.y) > 0.5 || Math.Abs(rb.velocity.x) > 0.5 ){
             actions.Run();
         }
         movement();

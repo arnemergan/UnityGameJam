@@ -6,11 +6,14 @@ public class LeftGunBoxLogic : MonoBehaviour
 {
     public GameObject gun;
     public GunLogic gunLogic;
-
+    private GameManager gameManager;
+    private UIManager UIcomponent;
     private void Start()
     {
         gun = GameObject.Find("SciFiRifleRight");
         gunLogic = gun.GetComponent<GunLogic>();
+        gameManager = FindObjectOfType<GameManager>();
+        UIcomponent = gameManager.GetComponent<UIManager>();
     }
 
     private void OnTriggerEnter(Collider collisionInfo)
@@ -18,6 +21,7 @@ public class LeftGunBoxLogic : MonoBehaviour
         if (collisionInfo.gameObject.tag.ToLower() == "player")
         {
             gunLogic.increaseFireRate();
+            UIcomponent.SetLeftStatus("Increased fire rate");
         }
 
     }

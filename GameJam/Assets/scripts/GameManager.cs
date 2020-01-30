@@ -29,14 +29,14 @@ public class GameManager : MonoBehaviour
     private float LastUpgradeScoreLeft = 0;
     private float LastUpgradeScoreRight = 0;
     private float LastIncrease = 0;
-
     private float ZombieX, ZombieY, TempX, TempY;
+    private UIManager UIComponent;
 
     //X = 0 is dividing line
 
     void Start()
     {
-        
+        UIComponent = gameObject.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
             Instantiate(ZombieBoxLeft, new Vector3(-TempX, (float)1.5, TempY), new Quaternion());
         }
 
-        if (RightScore % 250 == 0 && RightScore != LastUpgradeScoreRight)
+        if (RightScore % 10 == 0 && RightScore != LastUpgradeScoreRight)
         {
             LastUpgradeScoreRight = RightScore;
 
@@ -160,28 +160,29 @@ public class GameManager : MonoBehaviour
     public void IncreaseSpawnRateLeft()
     {
         ZombieSpawnRateLeft += 0.5f;
+        UIComponent.SetLeftStatus("P2 has sent more zombies to you...");
     }
 
     public void IncreaseSpawnRateRight()
     {
         ZombieSpawnRateLeft += 0.5f;
+        UIComponent.SetRightStatus("P1 has sent more zombies to you...");
     }
 
     public void IncreaseHealthLeft()
     {
+        if(LeftHealth < 1000)
+            UIComponent.SetLeftStatus("Increased health");
         LeftHealth += 250;
         if(LeftHealth > 1000)
-        {
             LeftHealth = 1000;
-        }
     }
 
     public void IncreaseHealthRight()
     {
-        RightHealth += 250;
+        if (RightHealth < 1000)
+            UIComponent.SetRightStatus("Increased health");
         if (RightHealth > 1000)
-        {
             RightHealth = 1000;
-        }
     }
 }

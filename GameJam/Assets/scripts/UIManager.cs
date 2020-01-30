@@ -10,6 +10,10 @@ public class UIManager : MonoBehaviour
     public RectTransform RightHealth;
     public Text LeftScoreText;
     public Text RightScoreText;
+    public Text LeftStatusMessage;
+    public Text RightStatusMessage;
+    private float TimeOfLeftUpdate;
+    private float TimeOfRightUpdate;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +27,33 @@ public class UIManager : MonoBehaviour
         RightHealth.sizeDelta = new Vector2(Game.RightHealth / 2, 40);
         LeftScoreText.text = "Score: " + Game.LeftScore;
         RightScoreText.text = "Score: " + Game.RightScore;
+
+        if(TimeOfLeftUpdate + 5 < Time.time)
+            ClearLeftStatus();
+
+        if (TimeOfRightUpdate + 5 < Time.time)
+            ClearRightStatus();
+    }
+
+    public void SetLeftStatus(string message)
+    {
+        TimeOfLeftUpdate = Time.time;
+        LeftStatusMessage.text = message;
+    }
+
+    public void SetRightStatus(string message)
+    {
+        TimeOfRightUpdate = Time.time;
+        RightStatusMessage.text = message;
+    }
+
+    void ClearLeftStatus()
+    {
+        LeftStatusMessage.text = "";
+    }
+
+    void ClearRightStatus()
+    {
+        RightStatusMessage.text = "";
     }
 }
