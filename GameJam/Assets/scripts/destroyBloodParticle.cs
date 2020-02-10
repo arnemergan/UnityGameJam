@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class destroyBloodParticle : MonoBehaviour
+public class DestroyBloodParticle : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

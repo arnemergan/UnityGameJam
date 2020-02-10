@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public float lookRadius = 10;
     private Transform target1;
@@ -13,7 +13,7 @@ public class enemyMovement : MonoBehaviour
     public Enemy enemy;
     private Transform[] transforms = new Transform[2];
 
-    NavMeshAgent navMesh;
+    //NavMeshAgent navMesh;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,24 +24,25 @@ public class enemyMovement : MonoBehaviour
         transforms[0] = target1;
         transforms[1] = target2;
         enemy = GetComponent<Enemy>();
-        navMesh = GetComponent<NavMeshAgent>();
+        //navMesh = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Transform target = GetClosestTarget(transforms);
+
+        /*Transform target = GetClosestTarget(transforms);
         if(enemy.health > 0){
             float distance = Vector3.Distance(target.position,transform.position);
             if(distance <= lookRadius){
-                navMesh.SetDestination(target.position);
+                //navMesh.SetDestination(target.position);
                 if(distance <= navMesh.stoppingDistance){
                     //do damage to player
                     Player player = target.GetComponent<Player>();
                     player.TakeDamage(enemy.damage,target); 
                 }
             }
-        }
+        }*/
     }
 
 Transform GetClosestTarget(Transform[] targets)

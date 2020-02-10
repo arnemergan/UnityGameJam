@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
     private float directionX = 0f;
@@ -27,7 +27,9 @@ public class playerMovement : MonoBehaviour
     {
         if(Math.Abs(rb.velocity.x) <= 0.01 && Math.Abs(rb.velocity.z) <= 0.01 && Math.Abs(rb.velocity.y) <= 0.01){
             actions.Stay();
-        }else if(Math.Abs(rb.velocity.z) > 0.01 && Math.Abs(rb.velocity.z) <= 0.5 || Math.Abs(rb.velocity.x) > 0.01 && Math.Abs(rb.velocity.x) <= 0.5 || Math.Abs(rb.velocity.y) > 0.01 && Math.Abs(rb.velocity.y) <= 0.5){
+        }else if(
+            Math.Abs(rb.velocity.z) > 0.01 && Math.Abs(rb.velocity.z) <= 0.5 ||
+            Math.Abs(rb.velocity.x) > 0.01 && Math.Abs(rb.velocity.x) <= 0.5){
             actions.Walk();
         }else if(Math.Abs(rb.velocity.z) > 0.5 || Math.Abs(rb.velocity.y) > 0.5 || Math.Abs(rb.velocity.x) > 0.5 ){
             actions.Run();

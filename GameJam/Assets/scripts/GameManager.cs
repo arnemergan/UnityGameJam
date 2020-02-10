@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            Instantiate(zombieRight, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
+            Instantiate(zombieRight, new Vector3(ZombieX, (float)13.55, ZombieY), new Quaternion());
 
             LastSpawnRight = Time.time;
         }
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            Instantiate(zombieLeft, new Vector3(ZombieX, (float)1.5, ZombieY), new Quaternion());
+            Instantiate(zombieLeft, new Vector3(ZombieX, (float)13.55, ZombieY), new Quaternion());
 
             LastSpawnLeft = Time.time;
         }
