@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     {
 
         
-        if (LeftScore%250 == 0 && LeftScore != LastUpgradeScoreLeft)
+        if (LeftScore%10 == 0 && LeftScore != LastUpgradeScoreLeft)
         {
             LastUpgradeScoreLeft = LeftScore;
 

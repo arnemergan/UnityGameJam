@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
     }
 
     void Moan(){
-        if(Random.Range(0, 500) == 1){
+        if(Random.Range(0, 50000) == 1){
             source.Play();
         }
     }

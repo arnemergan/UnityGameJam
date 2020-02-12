@@ -10,7 +10,7 @@ public class LeftGunBoxLogic : MonoBehaviour
     private UIManager UIcomponent;
     private void Start()
     {
-        gun = GameObject.Find("SciFiRifleRight");
+        gun = GameObject.Find("SciFiRifleLeft");
         gunLogic = gun.GetComponent<GunLogic>();
         gameManager = FindObjectOfType<GameManager>();
         UIcomponent = gameManager.GetComponent<UIManager>();
