@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 250
-  enemy: {fileID: 3460063226808166412}
+  soldierNumber: 2
 --- !u!114 &3460063226808166412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6336a354d3d484a8fa280dfa448ed6b7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.53
   m_Pitch: 1
   Loop: 0
   Mute: 0
