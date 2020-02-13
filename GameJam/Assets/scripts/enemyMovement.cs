@@ -21,7 +21,11 @@ public class EnemyMovement : MonoBehaviour
 
         target = GameObject.Find("soldier" + soldierNumber);
         targetLocation = target.transform;
-        transform.LookAt(targetLocation);
+
+        var lookPos = targetLocation.position - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 0);
     }
 
     void FixedUpdate()
@@ -38,12 +42,14 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 
     private void UpdateRotation()
     {
-        transform.LookAt(targetLocation);
-
-        //transform.rotation = Quaternion.Euler(0, transform.rotation.y, 0);
+        var lookPos = targetLocation.position - transform.position;
+        lookPos.y = 0;
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 10f);
     }
 }
